@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=ldpi" /-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <title>File Uploader</title>
+        <style type="text/css">
+            header {margin-bottom: 5px;}
+            canvas {background-color:#EEFFCE; width: 100%;}
+            .fileUpload {position: relative; overflow: hidden; width: 60%;}
+            .fileUpload input.upload {position: absolute; top: 0; right: 0; margin: 0px;
+                                     padding: 0; font-size: 20px; cursor: pointer; opacity: 0; filter: alpha(opacity=0);}
+        </style>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <header class="w3-container w3-card-2 w3-teal w3-center" sytle="margin-bottom: 50px;">
+                <h2>Image Uploader</h2>
+            </header>
+            <div id="input-form" class="w3-container w3-center w3-white ">
+                <div id="current-page">
+                    <h3 id="title" class="w3-text-teal" style="font-style: italic; text-decoration: underline">Input Name And Image</h3>
+                    <div class="w3-group">
+                        <input id="username" class="w3-input" type="text" style="width:95%"/>
+                        <label class="w3-label">Full Name</label>
+                    </div>
+                    <div id="image-buttons">
+                        <div class="w3-btn w3-teal fileUpload">
+                            From File
+                            <input class="upload" id="image-file" type="file" name="image" accept="image/*" onchange="loadFromFiles(event)">
+                        </div>
+                        <br><br>OR<br><br>
+                        <button class="w3-btn w3-teal fileUpload" onclick="takePicture()">Take Picture</button>
+                    </div>
+                    <br><br>
+                    <button style="width: 80%; display: none" id="continue-btn" class="w3-btn w3-orange fileUpload" onclick="loadReviewPage()" >Continue</button>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
